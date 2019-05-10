@@ -10,14 +10,7 @@ namespace Code4mk\LaraRate;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
-use Code4mk\LaraRate\Rate as LaraRating;
-
-/**
- * @author    @code4mk <hiremostafa@gmail.com>
- * @author    @0devco <with@0dev.co>
- * @since     2019
- * @copyright 0dev.co (https://0dev.co)
- */
+use Code4mk\LaraRate\Rate;
 
 class LaraRateServiceProvider extends ServiceProvider
 {
@@ -48,7 +41,7 @@ class LaraRateServiceProvider extends ServiceProvider
    public function register()
    {
      $this->app->bind('lara_rate', function () {
-      return new LaraRating;
+      return new Rate;
      });
    }
 }
