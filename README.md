@@ -25,10 +25,8 @@ php artisan vendor:publish --provider="Code4mk\LaraRate\LaraRateServiceProvider"
 
 
 ```php
-"expired" => "PT12M",
-"isCodePrefix" => true,
-"codePrefix" => "PMM-",
-"codeLenght" => 10
+"customer_table_name" => "users",
+"customer_retrive_column" =>["id","email"]
 ```
 
 * `php artisan config:clear`
@@ -51,11 +49,15 @@ Krate::update($productID,$userID,$rate,$comment);
 
 ## `get()`
 
+* get rating details
+
 ```php
 Krate::get($productID);
 ```
 
 ## `getRate()`
+
+* rating type
 
 ```php
 Krate::getRate($productID);
