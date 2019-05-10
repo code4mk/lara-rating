@@ -16,7 +16,7 @@ class CreateLaraRatesTable extends Migration
         Schema::create('lara_rates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('product_id');
-            $table->integer('user_id');
+            $table->integer('rater_id');
             $table->integer('rating');
             $table->string('comment');
             $table->timestamps();

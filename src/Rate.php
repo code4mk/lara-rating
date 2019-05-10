@@ -27,7 +27,7 @@ class Rate
   {
     $rateNow = new Krate;
     $rateNow->product_id = $productID;
-    $rateNow->user_id = $raterID;
+    $rateNow->rater_id = $raterID;
     $rateNow->rating = $rate;
     $rateNow->comment = $comment;
     $rateNow->save();
@@ -45,10 +45,10 @@ class Rate
   public function update($productID,$raterID,$rate,$comment)
   {
     $rateNow = Krate::where('product_id',$productID)
-                    ->where('user_id',$raterID)
+                    ->where('rater_id',$raterID)
                     ->first();
     $rateNow->product_id = $productID;
-    $rateNow->user_id = $raterID;
+    $rateNow->rater_id = $raterID;
     $rateNow->rating = $rate;
     $rateNow->comment = $comment;
     $rateNow->save();
@@ -66,7 +66,7 @@ class Rate
       if (!empty(Config::get('laraRate.customer_table_name'))){
         foreach ($rates as $key => $v) {
           $user = DB::table(Config::get('laraRate.customer_table_name'))
-                    ->where('id',$v['user_id'])
+                    ->where('id',$v['rater_id'])
                     ->first(Config::get('laraRate.customer_retrive_columns'));
           $v["rater"] = $user;
         }

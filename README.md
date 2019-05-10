@@ -63,12 +63,12 @@ Krate::getRatings($productID);
   {
     "id": 1,
     "product_id": 3,
-    "user_id": 3,
+    "rater_id": 3,
     "rating": 5,
     "comment": "5star",
     "created_at": "2019-05-10 16:25:10",
     "updated_at": "2019-05-10 16:25:10",
-    "customer": {
+    "rater": {
       "id": 3,
       "email": "maruf@gmail.com"
     }
@@ -76,12 +76,12 @@ Krate::getRatings($productID);
   {
     "id": 2,
     "product_id": 3,
-    "user_id": 2,
+    "rater_id": 2,
     "rating": 2,
     "comment": "2star",
     "created_at": "2019-05-10 16:26:58",
     "updated_at": "2019-05-10 16:26:58",
-    "customer": {
+    "rater": {
       "id": 2,
       "email": "jamal@gmail.com"
     }
