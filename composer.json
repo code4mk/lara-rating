@@ -1,0 +1,39 @@
+{
+  "name": "code4mk/lara-rating",
+  "description": "",
+  "keywords": [
+    "rate",
+    "rating",
+    "laravel",
+    "laravel-rating",
+    "code4mk",
+    "0devco"
+  ],
+  "homepage": "https://github.com/code4mk/lara-rating",
+  "support": {
+    "issues": "https://github.com/code4mk/lara-rating/issues",
+    "source": "https://github.com/code4mk/lara-rating"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "code4mk",
+      "email": "hiremostafa@gmail.com",
+      "website": "https://code4mk.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Code4mk\\LaraRate\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "Code4mk\\LaraRate\\LaraRateServiceProvider"
+        ]
+    }
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}
