@@ -87,8 +87,8 @@ class Rate
           "percent" => round((100/$person) * $fiveStar)
         ],
       ],
-      "total_rate" => $person,
-      "rate" => round($rate),
+      "total_rater" => $person,
+      "rating" => round($rate),
     ];
   }
 }

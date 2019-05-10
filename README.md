@@ -127,8 +127,8 @@ Krate::getRate($productID);
             "percent": 50
         }
     },
-    "total_rate": 2,
-    "rate": 4
+    "total_rater": 2,
+    "rating": 4
 }
 ```
 
