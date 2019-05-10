@@ -49,11 +49,46 @@ Krate::update($productID,$userID,$rate,$comment);
 
 ## `get()`
 
-* get rating details
+* get specific product's rating details
 
 ```php
 Krate::get($productID);
 ```
+* output
+
+~ `Krate::get(3)`
+
+```json
+[
+  {
+    "id": 1,
+    "product_id": 3,
+    "user_id": 3,
+    "rating": 5,
+    "comment": "5star",
+    "created_at": "2019-05-10 16:25:10",
+    "updated_at": "2019-05-10 16:25:10",
+    "customer": {
+      "id": 3,
+      "email": "maruf@gmail.com"
+    }
+  },
+  {
+    "id": 2,
+    "product_id": 3,
+    "user_id": 2,
+    "rating": 2,
+    "comment": "2star",
+    "created_at": "2019-05-10 16:26:58",
+    "updated_at": "2019-05-10 16:26:58",
+    "customer": {
+      "id": 2,
+      "email": "jamal@gmail.com"
+    }
+  }
+]
+```
+
 
 ## `getRate()`
 
@@ -62,5 +97,41 @@ Krate::get($productID);
 ```php
 Krate::getRate($productID);
 ```
+
+
+* output  
+
+~ `Krate::getRate(3)`
+
+```json
+{
+    "rateType": {
+        "one_star": {
+            "star": 0,
+            "percent": 0
+        },
+        "two_star": {
+            "star": 1,
+            "percent": 50
+        },
+        "three_star": {
+            "star": 0,
+            "percent": 0
+        },
+        "four_star": {
+            "star": 0,
+            "percent": 0
+        },
+        "five_star": {
+            "star": 1,
+            "percent": 50
+        }
+    },
+    "total_rate": 2,
+    "rate": 4
+}
+```
+
+
 
 <a href="https://twitter.com/0devco" target="_blank" ><p align="center" ><img src="https://raw.githubusercontent.com/0devco/docs/master/.devco-images/logo-transparent.png"></p></a>
