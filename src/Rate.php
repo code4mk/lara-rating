@@ -38,7 +38,7 @@ class Rate
     $rateNow->save();
   }
 
-  public function get($productID)
+  public function getRatings($productID)
   {
     $rates = Krate::where('product_id',$productID)->get();
       if (!empty(Config::get('laraRate.customer_table_name'))){
@@ -51,7 +51,7 @@ class Rate
     return  $rates;
   }
 
-  public function getRate($productID)
+  public function getRatingStat($productID)
   {
     $rates = Krate::where('product_id',$productID)->get();
 

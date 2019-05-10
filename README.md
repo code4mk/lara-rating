@@ -47,16 +47,16 @@ use Krate;
 Krate::update($productID,$userID,$rate,$comment);
 ```
 
-## `get()`
+## `getRatings()`
 
 * get specific product's rating details
 
 ```php
-Krate::get($productID);
+Krate::getRatings($productID);
 ```
 * output
 
-~ `Krate::get(3)`
+~ `Krate::getRatings(3)`
 
 ```json
 [
@@ -90,18 +90,18 @@ Krate::get($productID);
 ```
 
 
-## `getRate()`
+## `getRatingStat()`
 
 * rating type
 
 ```php
-Krate::getRate($productID);
+Krate::getRatingStat($productID);
 ```
 
 
 * output  
 
-~ `Krate::getRate(3)`
+~ `Krate::getRatingStat(3)`
 
 ```json
 {
