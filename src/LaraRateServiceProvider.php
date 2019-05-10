@@ -23,13 +23,14 @@ class LaraRateServiceProvider extends ServiceProvider
    {
      // publish database
      $this->publishes([
+       // Publish migrations
        __DIR__ . '/../migrations/' => base_path('/database/migrations'),
       ], 'migrations');
-     // publish config
+     // Publish config
      $this->publishes([
        __DIR__ . '/../config/laraRate.php' => config_path('laraRate.php'),
      ], 'config');
-
+     // Set alias
       AliasLoader::getInstance()->alias('Krate', 'Code4mk\LaraRate\Facades\Rating');
    }
 
