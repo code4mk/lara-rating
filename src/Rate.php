@@ -9,18 +9,19 @@ namespace Code4mk\LaraRate;
  */
 
 use Code4mk\LaraRate\Model\Krate;
+use Code4mk\LaraRate\Contracts\Rating;
 use Config;
 use DB;
 
-class Rate
+class Rate implements Rating
 {
   /**
-   * Create a rating for a product
+   * Create a rating for a product.
    *
    * @param int $productID
    * @param int $raterID
    * @param int $rate
-   * @param str $comment
+   * @param string $comment
    * @return void
    */
   public function create($productID,$raterID,$rate,$comment)
@@ -34,12 +35,12 @@ class Rate
   }
 
   /**
-   * Update a rating with given  product id and rater id
+   * Update a rating with given  product id and rater id.
    *
    * @param int $productID
    * @param int $raterID
    * @param int $rate
-   * @param str $comment
+   * @param string $comment
    * @return void
    */
   public function update($productID,$raterID,$rate,$comment)
@@ -55,9 +56,9 @@ class Rate
   }
 
   /**
-   * Get rating lists with product id
+   * Get rating lists with product id.
    *
-   * @param $productID integer
+   * @param int $productID
    * @return array $rates
    */
   public function getRatings($productID)
@@ -75,7 +76,7 @@ class Rate
   }
 
   /**
-   * Get rating statistics with product id
+   * Get rating statistics with product id.
    *
    * @param $productID integer
    * @return array $rates

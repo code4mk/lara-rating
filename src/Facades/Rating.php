@@ -10,6 +10,14 @@ namespace Code4mk\LaraRate\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @method static void create($productID,$raterID,$rate,$comment)
+ * @method static void update($productID,$raterID,$rate,$comment)
+ * @method static array getRatings($productID)
+ * @method statis array getRatingStat($productID)
+ *
+ * @see Code4mk\LaraRate\Rate
+ */
 class Rating extends Facade
 {
   /**
