@@ -35,6 +35,8 @@ php artisan vendor:publish --provider="Code4mk\LaraRate\LaraRateServiceProvider"
 
 ## `create()`
 
+* `int $productID, int $raterID, int $rate, string $comment`
+
 ```php
 use Krate;
 Krate::create($productID,$userID,$rate,$comment)
@@ -42,15 +44,17 @@ Krate::create($productID,$userID,$rate,$comment)
 
 ## `update()`
 
+* `int $productID, int $raterID, int $rate, string $comment`
+
 ```php
 use Krate;
-Krate::update($productID,$userID,$rate,$comment);
+Krate::update($productID,$raterID,$rate,$comment);
 ```
 
 ## `getRatings()`
 
 * get specific product's rating details
-
+* `int productID`
 ```php
 Krate::getRatings($productID);
 ```
@@ -93,7 +97,7 @@ Krate::getRatings($productID);
 ## `getRatingStat()`
 
 * rating type
-
+* `int productID`
 ```php
 Krate::getRatingStat($productID);
 ```
@@ -130,6 +134,35 @@ Krate::getRatingStat($productID);
     "total_rater": 2,
     "rating": 4
 }
+```
+
+## getRaterRatings
+
+* customer/rater/user's rating lists  
+* `int raterID`
+
+```php
+Krate::getRaterRatings($raterID);
+```
+
+~ `Krate::getRaterRatings(2)`
+
+```json
+[
+    {
+        "id": 1,
+        "product_id": 1,
+        "rater_id": 1,
+        "rating": 5,
+        "comment": "5 star",
+        "created_at": "2019-05-11 00:55:46",
+        "updated_at": "2019-05-11 00:55:46",
+        "product": {
+            "name": "iphone 10",
+            "slug": "iphone-10"
+        }
+    }
+]
 ```
 
 

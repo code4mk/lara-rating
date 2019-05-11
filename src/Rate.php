@@ -133,12 +133,13 @@ class Rate implements Rating
   {
     $ratings = Krate::where('rater_id',$raterID)->get();
     if (!empty(Config::get('laraRate.products_table_name'))){
-      foreach ($rates as $key => $v) {
+      foreach ($ratings as $key => $v) {
         $product = DB::table(Config::get('laraRate.products_table_name'))
-                  ->where('id',$v['rater_id'])
+                  ->where('id',$v['product_id'])
                   ->first(Config::get('laraRate.product_retrive_columns'));
         $v["product"] = $product;
       }
     }
+    return $ratings;
   }
 }
