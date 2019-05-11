@@ -78,7 +78,7 @@ class Rate implements Rating
   /**
    * Get rating statistics with product id.
    *
-   * @param $productID integer
+   * @param int $productID
    * @return array $rates
    */
   public function getRatingStat($productID)
@@ -121,5 +121,24 @@ class Rate implements Rating
       "rating" => round($rate),
     ];
     return $stats;
+  }
+
+  /**
+   * Get customer's  all rating lists with customer/rater id.
+   *
+   * @param int $raterID
+   * @return array $ratings
+   */
+  public function getRaterRatings($raterID)
+  {
+    $ratings = Krate::where('rater_id',$raterID)->get();
+    if (!empty(Config::get('laraRate.products_table_name'))){
+      foreach ($rates as $key => $v) {
+        $product = DB::table(Config::get('laraRate.products_table_name'))
+                  ->where('id',$v['rater_id'])
+                  ->first(Config::get('laraRate.product_retrive_columns'));
+        $v["product"] = $product;
+      }
+    }
   }
 }

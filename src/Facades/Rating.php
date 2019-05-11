@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static void create($productID,$raterID,$rate,$comment)
  * @method static void update($productID,$raterID,$rate,$comment)
  * @method static array getRatings($productID)
- * @method statis array getRatingStat($productID)
+ * @method static array getRatingStat($productID)
+ * @method static array getRaterRatings($raterID)
  *
  * @see Code4mk\LaraRate\Rate
  */

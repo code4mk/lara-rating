@@ -44,4 +44,12 @@ interface Rating
    * @return array $rates
    */
   public function getRatingStat($productID);
+
+  /**
+   * Get customer's  all rating lists with customer/rater id.
+   *
+   * @param int $raterID
+   * @return array $ratings
+   */
+  public function getRaterRatings($raterID);
 }
