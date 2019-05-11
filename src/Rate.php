@@ -63,11 +63,11 @@ class Rate
   public function getRatings($productID)
   {
     $rates = Krate::where('product_id',$productID)->get();
-      if (!empty(Config::get('laraRate.customer_table_name'))){
+      if (!empty(Config::get('laraRate.rater_table_name'))){
         foreach ($rates as $key => $v) {
-          $user = DB::table(Config::get('laraRate.customer_table_name'))
+          $user = DB::table(Config::get('laraRate.rater_table_name'))
                     ->where('id',$v['rater_id'])
-                    ->first(Config::get('laraRate.customer_retrive_columns'));
+                    ->first(Config::get('laraRate.rater_retrive_columns'));
           $v["rater"] = $user;
         }
       }

@@ -26,7 +26,7 @@ php artisan vendor:publish --provider="Code4mk\LaraRate\LaraRateServiceProvider"
 
 ```php
 "customer_table_name" => "users",
-"customer_retrive_column" =>["id","email"]
+"customer_retrive_columns" =>["id","email"]
 ```
 
 * `php artisan config:clear`
