@@ -93,8 +93,8 @@ class Rate
     $person = collect($rates)->count();
     $rate = $sum / $person;
 
-    return [
-      'rateType' => [
+    $stats = [
+      "type" => [
         "one_star" => [
           "star" => $oneStar,
           "percent" => round((100/$person) * $oneStar)
@@ -114,10 +114,11 @@ class Rate
         "five_star" => [
           "star" => $fiveStar,
           "percent" => round((100/$person) * $fiveStar)
-        ],
+        ]
       ],
       "total_rater" => $person,
       "rating" => round($rate),
     ];
+    return $stats;
   }
 }
